@@ -3,438 +3,342 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>אלון שיפוצים - הופכים חלום למציאות</title>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <title>אופק - שיקום ותחזוקת מבנים | מומחים בעבודות גובה</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
     <style>
-        /* --- הגדרות בסיס ומשתנים --- */
+        /* הגדרות בסיס ומשתנים */
         :root {
-            --primary: #D4AF37; /* זהב יוקרתי */
-            --dark: #1a1a1a;
-            --light: #f9f9f9;
-            --text-gray: #666;
-            --whatsapp: #25D366;
+            --primary: #1a253a; /* כחול יוקרתי כהה */
+            --accent: #d4af37; /* זהב מתכתי */
+            --light: #f4f4f4;
+            --text: #333;
+            --white: #ffffff;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Heebo', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: var(--light);
-            color: var(--dark);
+            background-color: var(--white);
+            color: var(--text);
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        html { scroll-behavior: smooth; }
-        a { text-decoration: none; color: inherit; }
-        ul { list-style: none; }
-
-        /* --- כפתורים ועיצוב כללי --- */
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: linear-gradient(45deg, var(--primary), #bfa14f);
-            color: white;
-            font-weight: bold;
-            border-radius: 50px;
-            transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
-            cursor: pointer;
-            border: none;
-            font-size: 1.1rem;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.6);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 900;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--primary);
-            font-weight: bold;
-            margin-bottom: 3rem;
-            font-size: 1.2rem;
-        }
-
-        /* --- Header --- */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            backdrop-filter: blur(10px);
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 900;
-        }
-
-        .logo span { color: var(--primary); }
-
-        nav ul { display: flex; gap: 20px; }
-        nav ul li a { font-weight: 500; transition: 0.3s; }
-        nav ul li a:hover { color: var(--primary); }
-        
-        @media (max-width: 768px) {
-            nav { display: none; } 
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            animation: fadeInDown 1s ease;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-            max-width: 600px;
-            animation: fadeInUp 1s ease 0.3s forwards;
-            opacity: 0;
-        }
-
-        /* --- Services --- */
-        .services { padding: 5rem 10%; }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: white;
-            padding: 40px 20px;
-            text-align: center;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: 0.3s;
-            border-top: 5px solid transparent;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-top: 5px solid var(--primary);
-        }
-
-        .service-card i {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        /* --- Gallery --- */
-        .gallery { padding: 5rem 0; background: #fff; }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 15px;
-            padding: 0 5%;
-        }
-
-        .gallery-item {
-            height: 300px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            cursor: pointer;
-            overflow: hidden;
-            border-radius: 15px;
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.4);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            opacity: 0;
-            transition: 0.3s;
-            backdrop-filter: blur(3px);
-        }
-
-        .gallery-item:hover .gallery-overlay { opacity: 1; }
-        .gallery-item:hover { transform: scale(1.02); transition: 0.3s; }
-
-        /* --- Why Us --- */
-        .why-us {
-            padding: 5rem 10%;
-            background: var(--dark);
-            color: white;
-            text-align: center;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .feature h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.5rem; }
-
-        /* --- Contact Form --- */
-        .contact { padding: 5rem 10%; text-align: center; background: #f4f4f4; }
-        
-        .contact-form {
-            max-width: 500px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            background: #fcfcfc;
-            font-size: 1rem;
-            outline: none;
-        }
-        
-        .contact-form input:focus, .contact-form textarea:focus {
-            border-color: var(--primary);
-        }
-
-        /* --- Floating Buttons --- */
-        .floating-buttons {
+        /* כפתור וואטסאפ צף */
+        .whatsapp-float {
             position: fixed;
             bottom: 20px;
-            left: 20px; /* צד שמאל לנגישות נוחה */
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .float-btn {
+            left: 20px;
+            background-color: #25d366;
+            color: white;
             width: 60px;
             height: 60px;
             border-radius: 50%;
             display: flex;
-            justify-content: center;
             align-items: center;
-            color: white;
-            font-size: 28px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-btn {
+            background: var(--primary);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
             transition: 0.3s;
-            animation: pulse 2s infinite;
         }
 
-        .whatsapp-float { background-color: var(--whatsapp); }
-        .phone-float { background-color: var(--primary); animation-delay: 1s; }
-
-        .float-btn:hover { transform: scale(1.1); }
-
-        /* --- Animations --- */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-50px); }
-            to { opacity: 1; transform: translateY(0); }
+        .nav-btn:hover {
+            background: var(--accent);
+            color: var(--primary);
         }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(26, 37, 58, 0.8), rgba(26, 37, 58, 0.7)),
+                        url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--accent);
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            border: 2px solid var(--accent);
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: var(--accent);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 10%;
+            background: var(--light);
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin: 10px auto 0;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border-bottom: 4px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* Why Us Section */
+        .features {
+            padding: 80px 10%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .features-text {
+            flex-basis: 45%;
+        }
+
+        .features-img {
+            flex-basis: 50%;
+            height: 400px;
+            background: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            border-radius: 10px;
+            box-shadow: 20px 20px 0 var(--primary);
+        }
+
+        .feature-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-item i {
+            color: var(--accent);
+            margin-left: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 50px 10%;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.7;
+            margin-top: 20px;
+        }
+
+        /* Animations */
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        /* --- Mobile Tweaks --- */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1.1rem; }
-            .gallery-grid { padding: 0 5%; grid-template-columns: 1fr; }
-            .floating-buttons { left: 20px; right: auto; }
+            .features-text, .features-img { flex-basis: 100%; }
+            .features-img { margin-top: 40px; height: 300px; }
+            header { padding: 15px 20px; }
         }
     </style>
 </head>
 <body>
 
+    <a href="https://wa.me/972500000000" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <header>
-        <div class="logo">אלון<span>שיפוצים</span></div>
-        <nav>
-            <ul>
-                <li><a href="#services">שירותים</a></li>
-                <li><a href="#gallery">פרויקטים</a></li>
-                <li><a href="#contact">צור קשר</a></li>
-            </ul>
-        </nav>
-        <a href="tel:0549361111" class="btn" style="padding: 8px 20px;">
-            <i class="fas fa-phone-alt" style="margin-left:8px;"></i>054-936-1111
-        </a>
+        <div class="logo">אופק <span>שיקום מבנים</span></div>
+        <a href="tel:0500000000" class="nav-btn">חייג עכשיו <i class="fas fa-phone"></i></a>
     </header>
 
     <section class="hero">
-        <h1>הופכים את הבית ליצירת אומנות</h1>
-        <p>שיפוצים כלליים, עבודות גמר ועיצוב פנים ברמת גימור שלא הכרתם. מתחייבים לאיכות, עמידה בזמנים ומחיר הוגן.</p>
-        <a href="#contact" class="btn">קבל הצעת מחיר חינם</a>
+        <div class="hero-content">
+            <h1>מומחים בשיקום ותחזוקת מבנים</h1>
+            <p>פתרונות איטום מתקדמים, עבודות גובה וחידוש חזיתות ברמה הגבוהה ביותר בישראל. בטיחות, איכות ואמינות מעל הכל.</p>
+            <a href="https://wa.me/972500000000" class="cta-button">קבל הצעת מחיר בווצאפ</a>
+        </div>
     </section>
 
-    <section id="services" class="services">
-        <h2 class="section-title">המומחיות שלנו</h2>
-        <div class="section-subtitle">כל פתרונות השיפוץ תחת קורת גג אחת</div>
-        
-        <div class="services-grid">
-            <div class="service-card">
+    <section class="services">
+        <h2 class="section-title">השירותים שלנו</h2>
+        <div class="cards-container">
+            <div class="card">
+                <i class="fas fa-building"></i>
+                <h3>שיקום חזיתות</h3>
+                <p>טיפול בסדקים, חיזוק אריחים וחידוש המראה החיצוני של הבניין.</p>
+            </div>
+            <div class="card">
                 <i class="fas fa-paint-roller"></i>
-                <h3>צבע ושפכטל</h3>
-                <p>צביעה אומנותית, החלקת קירות בשפכטל אמריקאי וגימורים מושלמים.</p>
+                <h3>איטום וצבע</h3>
+                <p>פתרונות איטום מתקדמים לגגות וקירות חיצוניים למניעת נזילות.</p>
             </div>
-            <div class="service-card">
-                <i class="fas fa-layer-group"></i>
-                <h3>ריצוף וחיפוי</h3>
-                <p>הדבקת ריצוף, פרקטים, וחיפוי חדרי רחצה ברמת דיוק של מילימטר.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-hammer"></i>
-                <h3>עבודות גבס</h3>
-                <p>עיצובים בגבס, הנמכות תקרה, נישות לטלוויזיה ותאורה נסתרת.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-tools"></i>
-                <h3>שיפוץ קומפלט</h3>
-                <p>ליווי מלא משלב ההריסה ועד המפתח. שקט נפשי מלא ללקוח.</p>
+            <div class="card">
+                <i class="fas fa-hard-hat"></i>
+                <h3>עבודות גובה</h3>
+                <p>צוות מיומן לעבודה בסנפלינג ופיגומים בכל גובה, בבטיחות מקסימלית.</p>
             </div>
         </div>
     </section>
 
-    <section id="gallery" class="gallery">
-        <h2 class="section-title">פרויקטים אחרונים</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80');">
-                <div class="gallery-overlay">עיצוב סלון יוקרתי</div>
-            </div>
-            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1556909212-d5b604d0c90d?auto=format&fit=crop&w=600&q=80');">
-                <div class="gallery-overlay">מטבח מודרני</div>
-            </div>
-            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=600&q=80');">
-                <div class="gallery-overlay">חדר רחצה מפנק</div>
-            </div>
-            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&w=600&q=80');">
-                <div class="gallery-overlay">ריצוף ופרקט פישבון</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="why-us">
-        <h2 class="section-title" style="color:white;">למה לבחור באלון שיפוצים?</h2>
-        <div class="features-grid">
-            <div class="feature">
-                <h3>01. עמידה בזמנים</h3>
-                <p>אנחנו מכבדים את הזמן שלכם. תאריך סיום הוא תאריך סיום.</p>
-            </div>
-            <div class="feature">
-                <h3>02. ניקיון וסדר</h3>
-                <p>אנחנו משאירים את הבית נקי בסוף כל יום עבודה.</p>
-            </div>
-            <div class="feature">
-                <h3>03. שקיפות מלאה</h3>
-                <p>הצעת מחיר ברורה בלי "הפתעות" ותוספות באמצע העבודה.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2 class="section-title">בואו נדבר על הפרויקט הבא</h2>
-        <div class="contact-form">
-            <input type="text" id="name" placeholder="שם מלא">
-            <input type="tel" id="phone" placeholder="מספר טלפון">
-            <textarea id="message" rows="4" placeholder="איזה שיפוץ תרצה לעשות?"></textarea>
-            <button class="btn" style="width:100%" onclick="sendToWhatsapp()">
-                <i class="fab fa-whatsapp"></i> שלח הודעה בוואטסאפ
-            </button>
-        </div>
-    </section>
-
-    <div class="floating-buttons">
-        <a href="https://wa.me/972549361111?text=היי אלון, הגעתי דרך האתר. אשמח להצעת מחיר." class="float-btn whatsapp-float" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="tel:0549361111" class="float-btn phone-float">
-            <i class="fas fa-phone"></i>
-        </a>
-    </div>
-
-    <script>
-        function sendToWhatsapp() {
-            let name = document.getElementById('name').value;
-            let phone = document.getElementById('phone').value;
-            let message = document.getElementById('message').value;
+    <section class="features">
+        <div class="features-text">
+            <h2 class="section-title" style="margin-right: 0;">למה לבחור באופק?</h2>
+            <p style="margin-bottom: 20px;">אנחנו מבינים שהבניין שלכם הוא הנכס היקר ביותר. לכן אנחנו לא מתפשרים על איכות החומרים ורמת הביצוע.</p>
             
-            if(name === "" || phone === "") {
-                alert("נא למלא שם וטלפון");
-                return;
-            }
-
-            // מספר הטלפון המעודכן לשליחת הטופס
-            let ownerPhone = "972549361111"; 
+            <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                <span>שימוש בחומרים בעלי תו תקן בלבד</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                <span>עמידה בלוחות זמנים קפדניים</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                <span>אחריות מלאה על כל עבודה</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                <span>ליווי אישי לוועדי בתים לאורך כל הדרך</span>
+            </div>
             
-            let url = `https://wa.me/${ownerPhone}?text=היי אלון, שמי ${name} (${phone}). אני מתעניין לגבי: ${message}`;
-            window.open(url, '_blank').focus();
-        }
+            <br>
+            <a href="tel:0500000000" class="cta-button" style="background: var(--primary); color: var(--white); border: none;">שיחת ייעוץ חינם</a>
+        </div>
+        <div class="features-img"></div>
+    </section>
 
-        // אנימציות גלילה
-        window.addEventListener('scroll', function() {
-            var elements = document.querySelectorAll('.service-card, .gallery-item');
-            var windowHeight = window.innerHeight;
-            
-            elements.forEach(function(element) {
-                var position = element.getBoundingClientRect().top;
-                if(position < windowHeight - 50) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
-            });
-        });
-    </script>
+    <footer>
+        <div class="logo" style="color: white;">אופק <span>שיקום מבנים</span></div>
+        <p>כל הזכויות שמורות 2024 © נבנה ועוצב בסטנדרט הגבוה ביותר.</p>
+    </footer>
 
 </body>
 </html>
