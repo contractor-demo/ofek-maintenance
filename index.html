@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>אופק - שיקום ותחזוקת מבנים | הסטנדרט החדש בבנייה</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <title>סדן יזמות בנייה ושיפוצים | קבלן רשום 41382</title>
+    <meta name="description" content="סדן יזמות בנייה ושיפוצים - קבלן רשום 41382 וחשמלאי מוסמך. מומחים בבניית ממ''דים, תוספות בנייה, עבודות חשמל ושיפוצים כלליים.">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;900&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- הגדרות פרימיום גלובליות --- */
+        /* --- הגדרות עיצוב פרימיום --- */
         :root {
-            --primary-dark: #0a192f; /* כחול עמוק מאוד */
-            --primary-blue: #172a45; /* כחול מודרני */
-            --accent-gold: #d4af37; /* זהב יוקרתי */
-            --accent-gold-bright: #fadd7f; /* זהב בהיר לאפקטים */
-            --text-light: #e6f1ff;
-            --text-dark: #333;
-            --bg-light: #f8f9fa;
+            --primary: #1a253a; /* כחול כהה רציני */
+            --secondary: #2c3e50;
+            --accent: #d4af37; /* זהב יוקרתי לקבלנים */
+            --white: #ffffff;
+            --light-bg: #f8f9fa;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -24,384 +23,316 @@
 
         body {
             font-family: 'Rubik', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
+            background-color: var(--white);
+            color: #333;
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        h1, h2, h3, .nav-btn, .logo { font-family: 'Montserrat', sans-serif; }
+        h1, h2, h3, .logo { font-family: 'Heebo', sans-serif; }
 
-        /* --- כפתור וואטסאפ צף משודרג --- */
+        /* --- כפתור וואטסאפ צף --- */
         .whatsapp-float {
             position: fixed;
-            bottom: 30px;
-            left: 30px;
-            background: linear-gradient(45deg, #25d366, #128c7e);
+            bottom: 25px;
+            left: 25px;
+            background: #25d366;
             color: white;
             width: 65px;
             height: 65px;
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             font-size: 35px;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             z-index: 1000;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.3s ease;
+            text-decoration: none;
         }
-        .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
-        .whatsapp-pulse {
-            position: absolute; width: 100%; height: 100%; border-radius: 50%;
-            border: 3px solid #25d366; animation: pulse 2s infinite;
-        }
+        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5); }
+        .pulse { position: absolute; width: 100%; height: 100%; border-radius: 50%; border: 3px solid #25d366; animation: pulse 2s infinite; }
         @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
 
-        /* --- Header יוקרתי --- */
+        /* --- Header --- */
         header {
-            background: rgba(10, 25, 47, 0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             padding: 1rem 5%;
             position: fixed; width: 100%; top: 0; z-index: 999;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
             display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 2px solid var(--accent-gold);
         }
 
         .logo {
-            font-size: 1.8rem; font-weight: 800; color: var(--text-light);
-            text-transform: uppercase; letter-spacing: 1px;
+            font-size: 1.6rem; font-weight: 900; color: var(--primary);
+            text-transform: uppercase; letter-spacing: -1px;
         }
-        .logo span { color: var(--accent-gold); }
+        .logo span { color: var(--accent); }
+        .license-number { font-size: 0.9rem; font-weight: 400; color: #666; display: block; margin-top: -5px; }
 
-        .nav-contact { display: flex; gap: 15px; align-items: center; }
-        .nav-phone {
-            color: var(--text-light); text-decoration: none; font-weight: 600;
-            display: flex; align-items: center; gap: 10px; transition: 0.3s;
+        .header-btn {
+            background: var(--primary); color: var(--white);
+            padding: 10px 25px; border-radius: 50px;
+            text-decoration: none; font-weight: bold;
+            transition: 0.3s; display: flex; align-items: center; gap: 8px;
         }
-        .nav-phone:hover { color: var(--accent-gold); }
-        .nav-btn {
-            background: linear-gradient(45deg, var(--accent-gold), #b8952b);
-            color: var(--primary-dark); padding: 12px 30px; border-radius: 4px;
-            text-decoration: none; font-weight: 800; transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
-        }
-        .nav-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5); }
+        .header-btn:hover { background: var(--accent); color: var(--primary); }
 
-        /* --- Hero Section עם אפקט הקלדה --- */
+        /* --- Hero Section --- */
         .hero {
-            min-height: 100vh;
-            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.9)),
-                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover; background-position: center; background-attachment: fixed;
-            display: flex; align-items: center; justify-content: center;
-            text-align: center; padding: 150px 20px 80px;
+            padding-top: 120px; padding-bottom: 80px;
+            background: linear-gradient(rgba(26, 37, 58, 0.9), rgba(26, 37, 58, 0.8)),
+                        url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover; background-position: center;
+            color: var(--white); text-align: center;
+            min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
         }
 
-        .hero-content { max-width: 900px; }
         .hero h1 {
-            font-size: 4rem; color: var(--text-light); margin-bottom: 20px; font-weight: 800;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; font-weight: 900;
         }
-        .hero h1 span { color: var(--accent-gold); }
         
-        /* אפקט הקלדה */
-        .typing-text {
-            font-size: 1.5rem; color: var(--accent-gold-bright);
-            margin-bottom: 40px; min-height: 1.5em; font-weight: 600;
+        .hero-subtitle {
+            font-size: 1.5rem; color: var(--accent); margin-bottom: 10px; font-weight: 700;
         }
 
-        .hero-buttons { display: flex; gap: 20px; justify-content: center; margin-top: 40px; }
-        .cta-button {
-            padding: 15px 40px; background: var(--accent-gold); color: var(--primary-dark);
-            text-decoration: none; font-weight: 800; border-radius: 4px;
-            font-size: 1.1rem; transition: 0.3s; border: 2px solid var(--accent-gold);
-        }
-        .cta-button.outline { background: transparent; color: var(--accent-gold); }
-        .cta-button:hover { transform: translateY(-5px); }
-
-        /* --- Stats Counter Section (אמינות) --- */
-        .stats {
-            background: var(--primary-dark); padding: 60px 10%;
-            display: flex; justify-content: space-around; flex-wrap: wrap;
-            text-align: center; color: var(--text-light);
-            margin-top: -50px; position: relative; z-index: 10;
-            box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
-        }
-        .stat-item { flex-basis: 200px; margin-bottom: 30px; }
-        .stat-number { font-size: 3.5rem; font-weight: 800; color: var(--accent-gold); display: block; }
-        .stat-label { font-size: 1.1rem; font-weight: 600; text-transform: uppercase; }
-
-        /* --- Services Section --- */
-        .services { padding: 120px 10%; background: var(--bg-light); text-align: center; }
-        .section-header { margin-bottom: 80px; }
-        .section-title {
-            font-size: 3rem; color: var(--primary-dark); font-weight: 800; position: relative; display: inline-block;
-        }
-        .section-title::after {
-            content: ''; display: block; width: 100px; height: 5px;
-            background: var(--accent-gold); margin: 20px auto 0;
+        .typing-container {
+            font-size: 1.4rem; height: 30px; margin-bottom: 40px; color: #ccc;
         }
 
-        .cards-container {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;
+        .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+        
+        .cta-btn {
+            padding: 15px 40px; border-radius: 5px; font-weight: bold; font-size: 1.1rem;
+            text-decoration: none; transition: 0.3s;
         }
-        .card {
-            background: white; padding: 50px 30px; border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.4s;
-            border-top: 5px solid transparent;
-        }
-        .card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border-top: 5px solid var(--accent-gold);
-        }
-        .card i {
-            font-size: 4rem;
-            background: linear-gradient(45deg, var(--accent-gold), #f8e7b0);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            margin-bottom: 30px;
-        }
-        .card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--primary-dark); }
+        .cta-primary { background: var(--accent); color: var(--primary); }
+        .cta-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+        .cta-secondary { border: 2px solid var(--white); color: var(--white); }
+        .cta-secondary:hover { background: var(--white); color: var(--primary); }
 
-        /* --- Portfolio Gallery (חדש!) --- */
-        .portfolio { padding: 120px 5%; background: var(--primary-blue); color: var(--text-light); text-align: center; }
-        .portfolio .section-title { color: var(--text-light); }
-        .gallery-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px; margin-top: 60px;
+        /* --- Trust Badges (Registered Contractor) --- */
+        .badges-bar {
+            background: var(--white); padding: 40px 10%;
+            display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-top: -40px; position: relative; border-radius: 10px;
+            max-width: 1200px; margin-left: auto; margin-right: auto;
         }
-        .gallery-item {
-            position: relative; height: 300px; overflow: hidden; border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .gallery-overlay {
-            position: absolute; bottom: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to top, rgba(10,25,47,0.9), transparent);
-            display: flex; flex-direction: column; justify-content: flex-end;
-            padding: 30px; opacity: 0; transition: 0.5s; transform: translateY(20px);
-        }
-        .gallery-item:hover img { transform: scale(1.1); }
-        .gallery-item:hover .gallery-overlay { opacity: 1; transform: translateY(0); }
-        .gallery-overlay h4 { color: var(--accent-gold); font-size: 1.4rem; margin-bottom: 10px; }
+        .badge { text-align: center; }
+        .badge i { font-size: 2.5rem; color: var(--accent); margin-bottom: 10px; }
+        .badge h3 { font-size: 1.1rem; color: var(--primary); font-weight: 700; }
+        .badge p { font-size: 0.9rem; color: #666; }
 
-        /* --- CTA Section --- */
-        .cta-section {
-            padding: 100px 10%; background: linear-gradient(45deg, var(--primary-dark), var(--primary-blue));
-            text-align: center; color: var(--text-light);
-        }
-        .cta-section h2 { font-size: 2.5rem; margin-bottom: 30px; }
+        /* --- Services --- */
+        .services { padding: 100px 10%; background: var(--light-bg); text-align: center; }
+        .section-title { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; font-weight: 800; }
+        .section-desc { margin-bottom: 60px; color: #666; max-width: 700px; margin-left: auto; margin-right: auto; }
 
-        /* --- Footer --- */
-        footer {
-            background: #050d1a; color: rgba(255,255,255,0.7); padding: 80px 10% 30px;
-        }
-        .footer-content {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 50px; margin-bottom: 60px;
-        }
-        .footer-col h4 { color: var(--accent-gold); font-size: 1.3rem; margin-bottom: 25px; }
-        .footer-col ul { list-style: none; }
-        .footer-col ul li { margin-bottom: 15px; }
-        .footer-col ul li a { color: rgba(255,255,255,0.7); text-decoration: none; transition: 0.3s; }
-        .footer-col ul li a:hover { color: var(--accent-gold); padding-right: 10px; }
-        .footer-bottom {
-            text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1);
+        .services-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;
         }
 
-        /* --- Mobile Responsive --- */
+        .service-card {
+            background: var(--white); padding: 40px 20px; border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03); transition: 0.3s;
+            border-bottom: 4px solid transparent;
+        }
+        .service-card:hover { transform: translateY(-10px); border-bottom: 4px solid var(--accent); }
+        .service-card i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
+        .service-card h3 { margin-bottom: 15px; font-size: 1.4rem; color: var(--secondary); }
+        .service-card ul { list-style: none; text-align: right; padding-right: 20px; }
+        .service-card ul li { margin-bottom: 8px; position: relative; }
+        .service-card ul li::before { content: '✓'; color: var(--accent); position: absolute; right: -20px; font-weight: bold; }
+
+        /* --- Testimonials (Real Data) --- */
+        .testimonials { padding: 80px 10%; background: var(--primary); color: var(--white); text-align: center; }
+        .review-card {
+            background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px;
+            margin: 20px auto; max-width: 800px; position: relative;
+        }
+        .stars { color: var(--accent); margin-bottom: 15px; }
+
+        /* --- Footer & Contact --- */
+        .contact-section { padding: 80px 10%; background: var(--white); }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        
+        .contact-info-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 25px; }
+        .contact-info-item i { color: var(--accent); font-size: 1.5rem; margin-top: 5px; }
+        .contact-info-item h4 { font-weight: bold; margin-bottom: 5px; color: var(--primary); }
+
+        footer { background: #111; color: #888; text-align: center; padding: 20px; font-size: 0.9rem; }
+
+        /* Mobile */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.8rem; }
-            .nav-phone { display: none; } /* הסתרת טלפון בהדר בנייד */
-            header { padding: 15px 20px; }
-            .hero-buttons { flex-direction: column; }
-            .cta-button { width: 100%; text-align: center; }
-            .stat-item { flex-basis: 45%; }
-            .whatsapp-float { width: 55px; height: 55px; font-size: 30px; bottom: 20px; left: 20px; }
+            .hero h1 { font-size: 2.5rem; }
+            .header-btn { display: none; } /* חיסכון במקום במובייל */
+            .badges-bar { flex-direction: column; gap: 40px; padding: 40px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <a href="https://wa.me/9725XXXXXXXX" class="whatsapp-float" target="_blank">
-        <div class="whatsapp-pulse"></div>
+    <a href="https://wa.me/972525609343" class="whatsapp-float" target="_blank">
+        <div class="pulse"></div>
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <header>
-        <div class="logo">אופק <span>הנדסה ושיקום</span></div>
-        <div class="nav-contact">
-             <a href="tel:05X-XXXXXXX" class="nav-phone">
-                <i class="fas fa-phone-alt"></i> 05X-XXXXXXX
-            </a>
-             <a href="tel:05X-XXXXXXX" class="nav-btn">שיחת ייעוץ דחופה <i class="fas fa-arrow-left"></i></a>
+        <div>
+            <div class="logo">סדן <span>יזמות ובנייה</span></div>
+            <span class="license-number">קבלן רשום 41382</span>
         </div>
+        <a href="tel:0525609343" class="header-btn">
+            <i class="fas fa-phone-alt"></i> 052-5609343
+        </a>
     </header>
 
     <section class="hero">
-        <div class="hero-content">
-            <h1>שיקום מבנים <span>בסטנדרט אחר</span></h1>
-            <div class="typing-text" id="typing-text"></div>
-            <p style="font-size: 1.3rem; color: #e6f1ff; margin-bottom: 40px; max-width: 700px; margin: 0 auto 40px;">
-                המומחים המובילים בישראל לטיפול במבנים מסוכנים, איטום מתקדם ועבודות גובה מורכבות. שקט נפשי לוועדי בתים וחברות ניהול.
-            </p>
-            <div class="hero-buttons">
-                <a href="https://wa.me/9725XXXXXXXX" class="cta-button">
-                    <i class="fab fa-whatsapp"></i> קבל הצעת מחיר מהירה
-                </a>
-                <a href="#services" class="cta-button outline">לשירותים שלנו</a>
-            </div>
+        <div class="hero-subtitle">חשמלאי מוסמך | קבלן רשום</div>
+        <h1>סדן יזמות בנייה ושיפוצים</h1>
+        <div class="typing-container">
+            <span id="typing-text"></span>
+        </div>
+        <div class="hero-buttons">
+            <a href="tel:0525609343" class="cta-btn cta-primary">חייג לעמוס</a>
+            <a href="tel:0525865870" class="cta-btn cta-secondary">חייג לעידו</a>
         </div>
     </section>
 
-    <section class="stats">
-        <div class="stat-item">
-            <span class="stat-number">15+</span>
-            <span class="stat-label">שנות ניסיון</span>
+    <section class="badges-bar">
+        <div class="badge">
+            <i class="fas fa-id-card"></i>
+            <h3>קבלן רשום 41382</h3>
+            <p>רישיון קבלן רשמי כחוק</p>
         </div>
-        <div class="stat-item">
-            <span class="stat-number">500+</span>
-            <span class="stat-label">פרויקטים שהושלמו</span>
+        <div class="badge">
+            <i class="fas fa-bolt"></i>
+            <h3>חשמלאי מוסמך</h3>
+            <p>ביצוע עבודות חשמל בבטיחות</p>
         </div>
-        <div class="stat-item">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">עמידה בתו תקן</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-number">24/7</span>
-            <span class="stat-label">זמינות למקרי חירום</span>
-        </div>
-    </section>
-
-    <section id="services" class="services">
-        <div class="section-header">
-            <h2 class="section-title">תחומי ההתמחות שלנו</h2>
-            <p style="font-size: 1.2rem; margin-top: 20px; color: #666;">פתרונות הנדסיים מתקדמים תחת קורת גג אחת</p>
-        </div>
-        <div class="cards-container">
-            <div class="card">
-                <i class="fas fa-city"></i>
-                <h3>שיקום וחיזוק חזיתות</h3>
-                <p>טיפול יסודי באריחים נופלים, סדקים בבטון וברזל חשוף. החזרת המבנה למראה חדש ובטוח תוך שימוש בחומרים המתקדמים ביותר.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-water"></i>
-                <h3>מערכות איטום מתקדמות</h3>
-                <p>פתרונות איטום מוחלטים לגגות, מרפסות וקירות חוץ. התחייבות לפתרון נזילות עקשניות עם אחריות ארוכת טווח.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-hard-hat"></i>
-                <h3>עבודות גובה וסנפלינג</h3>
-                <p>צוותים מוסמכים לביצוע עבודות מורכבות בכל גובה, ללא צורך בפיגומים יקרים, תוך שמירה על בטיחות מקסימלית.</p>
-            </div>
+        <div class="badge">
+            <i class="fas fa-star"></i>
+            <h3>דירוג 5.0 כוכבים</h3>
+            <p>על בסיס המלצות לקוחות</p>
         </div>
     </section>
 
-    <section class="portfolio">
-        <h2 class="section-title" style="color:white; border-color: var(--accent-gold);">פרויקטים נבחרים</h2>
-        <p style="font-size: 1.2rem; margin-top: 20px; opacity: 0.8;">הצצה לחלק מהבניינים שחידשנו לאחרונה</p>
+    <section class="services">
+        <h2 class="section-title">תחומי התמחות</h2>
+        <p class="section-desc">פתרונות מקיפים תחת קורת גג אחת - מאור יהודה ועד כל גוש דן והשרון</p>
         
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="פרויקט שיקום">
-                <div class="gallery-overlay">
-                    <h4>מגדלי היוקרה, ת"א</h4>
-                    <p>חידוש מעטפת חיצונית ואיטום</p>
-                </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>בניית ממ"דים ומיגון</h3>
+                <ul>
+                    <li>בניית ממ"ד תקני מאפס</li>
+                    <li>תוספת ממ"ד לבניין קיים</li>
+                    <li>שיפוץ ושדרוג מקלטים</li>
+                    <li>איטום חדרי ביטחון</li>
+                </ul>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="עבודות גובה">
-                <div class="gallery-overlay">
-                    <h4>מתחם העסקים, הרצליה</h4>
-                    <p>עבודות סנפלינג לניקוי ושיקום</p>
-                </div>
+
+            <div class="service-card">
+                <i class="fas fa-tools"></i>
+                <h3>שיפוצים ועבודות חשמל</h3>
+                <ul>
+                    <li>שיפוץ קומפלט לדירות</li>
+                    <li>עבודות חשמל (חשמלאי מוסמך)</li>
+                    <li>שיפוץ חדרי אמבטיה</li>
+                    <li>עבודות אינסטלציה וגבס</li>
+                </ul>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1429497419816-9ca5cfb4571a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="איטום גגות">
-                <div class="gallery-overlay">
-                    <h4>בניין מגורים, רמת גן</h4>
-                    <p>איטום גג מלא ביריעות ביטומניות</p>
-                </div>
+
+            <div class="service-card">
+                <i class="fas fa-hard-hat"></i>
+                <h3>בנייה קלה ויזמות</h3>
+                <ul>
+                    <li>תוספות בנייה</li>
+                    <li>בנייה קלה מתקדמת</li>
+                    <li>חיפוי וריצוף</li>
+                    <li>ניהול פרויקטים בבנייה</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section class="cta-section">
-        <h2>הבניין שלכם זקוק למומחים? אל תחכו לנזק הבא.</h2>
-        <p style="font-size: 1.3rem; margin-bottom: 40px; opacity: 0.9;">צרו קשר עוד היום לתיאום סיור שטח וקבלת הצעת מחיר ללא התחייבות.</p>
-         <a href="tel:05X-XXXXXXX" class="cta-button" style="background: white; color: var(--primary-dark); border: none;">
-            <i class="fas fa-phone-alt"></i> חייגו עכשיו: 05X-XXXXXXX
-        </a>
+    <section class="testimonials">
+        <h2 class="section-title" style="color:white;">לקוחות ממליצים</h2>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"צוות מדהים שמנהל את העבודה בצורה מסודרת, משלב התכנון ועד הפרטים הכי קטנים. עמדו בזמנים!"</p>
+            <h4 style="margin-top: 15px; color: var(--accent);">ניצה לניאדו</h4>
+        </div>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"מומלץ מכל הלב, קיבלתי שירות מצוין."</p>
+            <h4 style="margin-top: 15px; color: var(--accent);">אביתר לניאדו</h4>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h2 class="section-title">צרו קשר</h2>
+        <div class="contact-grid">
+            <div>
+                <div class="contact-info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>כתובת המשרד</h4>
+                        <p>אור יהודה 1, אור יהודה</p>
+                        <p style="font-size:0.9rem; color:#666;">אזורי שירות: תל אביב, המרכז, אזור השרון</p>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>טלפונים ליצירת קשר</h4>
+                        <p><strong>עמוס:</strong> <a href="tel:0525609343" style="color:#333; text-decoration:none;">052-5609343</a></p>
+                        <p><strong>עידו:</strong> <a href="tel:0525865870" style="color:#333; text-decoration:none;">052-5865870</a></p>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>שעות פעילות</h4>
+                        <p>א'-ה': 08:00-17:00</p>
+                        <p>ו': 08:00-13:00</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="display:flex; align-items:center; justify-content:center;">
+                <a href="https://wa.me/972525609343" style="background:#25d366; color:white; padding:20px 40px; border-radius:10px; text-decoration:none; font-weight:bold; font-size:1.2rem; display:inline-flex; align-items:center; gap:10px; box-shadow:0 10px 20px rgba(0,0,0,0.1);">
+                    <i class="fab fa-whatsapp" style="font-size:1.5rem;"></i> שלח הודעה בוואטסאפ
+                </a>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-col">
-                <div class="logo" style="margin-bottom: 20px;">אופק <span>הנדסה ושיקום</span></div>
-                <p>החברה המובילה בישראל לפתרונות הנדסיים, שיקום מבנים ועבודות גובה. מחויבים לאיכות, בטיחות ושירות ללא פשרות.</p>
-            </div>
-            <div class="footer-col">
-                <h4>שירותים מהירים</h4>
-                <ul>
-                    <li><a href="#services">שיקום חזיתות</a></li>
-                    <li><a href="#services">איטום גגות ומבנים</a></li>
-                    <li><a href="#services">עבודות סנפלינג</a></li>
-                    <li><a href="#services">חיזוק אריחים</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>פרטי התקשרות</h4>
-                <ul>
-                    <li><i class="fas fa-map-marker-alt" style="color:var(--accent-gold); margin-left: 10px;"></i> אזור שירות: כל גוש דן והשרון</li>
-                     <li><a href="tel:05X-XXXXXXX"><i class="fas fa-phone" style="color:var(--accent-gold); margin-left: 10px;"></i> 05X-XXXXXXX</a></li>
-                    <li><i class="fas fa-envelope" style="color:var(--accent-gold); margin-left: 10px;"></i> office@ofek-eng.co.il</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2024 כל הזכויות שמורות לאופק שיקום מבנים | פיתוח אתרים: ProDigital</p>
-        </div>
+        <p>© 2024 סדן יזמות בנייה ושיפוצים | כל הזכויות שמורות</p>
     </footer>
 
     <script>
-        const phrases = [
-            "מומחים בטיפול במבנים מסוכנים",
-            "פתרונות איטום מתקדמים",
-            "עבודות גובה בבטיחות מקסימלית",
-            "שקט נפשי לוועדי בתים"
-        ];
-        let currentPhrase = 0;
-        let currentChar = 0;
-        let isDeleting = false;
-        const typingSpeed = 100;
-        const deletingSpeed = 50;
-        const pauseEnd = 2000;
+        const textElement = document.getElementById('typing-text');
+        const texts = ['מומחים בבניית ממ"דים', 'תוספות בנייה מתקדמות', 'שיפוצים כלליים ברמה גבוהה'];
+        let count = 0;
+        let index = 0;
+        let currentText = '';
+        let letter = '';
 
-        function typeEffect() {
-            const currentText = phrases[currentPhrase];
-            const typingElement = document.getElementById('typing-text');
-
-            if (isDeleting) {
-                typingElement.textContent = currentText.substring(0, currentChar--);
+        (function type() {
+            if (count === texts.length) { count = 0; }
+            currentText = texts[count];
+            letter = currentText.slice(0, ++index);
+            textElement.textContent = letter;
+            if (letter.length === currentText.length) {
+                count++;
+                index = 0;
+                setTimeout(type, 2000);
             } else {
-                typingElement.textContent = currentText.substring(0, currentChar++);
+                setTimeout(type, 100);
             }
-
-            let delta = isDeleting ? deletingSpeed : typingSpeed;
-
-            if (!isDeleting && currentChar === currentText.length + 1) {
-                isDeleting = true;
-                delta = pauseEnd;
-            } else if (isDeleting && currentChar === 0) {
-                isDeleting = false;
-                currentPhrase = (currentPhrase + 1) % phrases.length;
-                delta = 500;
-            }
-
-            setTimeout(typeEffect, delta);
-        }
-
-        window.onload = function() {
-            setTimeout(typeEffect, 1000);
-        }
+        }());
     </script>
-
 </body>
 </html>
